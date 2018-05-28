@@ -24,6 +24,9 @@ alias gfc='git diff -w --cached'
 alias gfm='git diff -w master'
 alias gl='git log --show-signature --oneline'
 
-alias clion="nohup ~/clion-2017.2/bin/clion.sh &"
+alias scan_network="sudo arp-scan -l --interface=enp0s25"
 
 function symbols() { nm -gC "$1" | ccze -A | less -R; }
+
+PATH=~/.local/bin:$PATH
+export EDITOR=vim
