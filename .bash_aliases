@@ -23,6 +23,7 @@ alias gfw='git diff -w --word-diff-regex=[^[:space:]]'
 alias gfc='git diff -w --cached'
 alias gfm='git diff -w master'
 alias gl='git log --show-signature --oneline'
+alias ll='ls -lh'
 
 alias scan_network="sudo arp-scan -l --interface=enp0s25"
 
