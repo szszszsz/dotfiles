@@ -4,6 +4,19 @@ function gpr(){
     git checkout pr_$1
 }
 
+function sha512file(){
+	echo Saving sha checksum to $1.sha512
+	sha512sum $1 | tee $1.sha512
+	ls -lh $1*
+}
+
+function network_priority(){
+	route -n
+	sudo ifmetric $1 50
+	route -n
+}
+alias network_scan="sudo arp-scan -l --interface=enp0s25"
+alias network_hogs='sudo netstat --inet -ap'
 
 alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
@@ -25,7 +38,6 @@ alias gfm='git diff -w master'
 alias gl='git log --show-signature --oneline'
 alias ll='ls -lh'
 
-alias scan_network="sudo arp-scan -l --interface=enp0s25"
 
 function symbols() { nm -gC "$1" | ccze -A | less -R; }
 
