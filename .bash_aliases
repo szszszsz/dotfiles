@@ -4,6 +4,25 @@ function gpr(){
     git checkout pr_$1
 }
 
+function git_archive(){
+	D=`basename ${PWD}`
+	N=$D-$1.tar.gz
+	R=~/work/release
+	git archive $1 --prefix "$D-$1/" -o $N
+	cp $N $R -v
+	gpg --detach-sign $R/$N
+	ls -lh $R/$N*
+
+}
+
+alias reload='. ~/.bash_aliases'
+
+function sha256file(){
+	echo Saving sha checksum to $1.sha256
+	sha256sum $1 | tee $1.sha256
+	ls -lh $1*
+}
+
 function sha512file(){
 	echo Saving sha checksum to $1.sha512
 	sha512sum $1 | tee $1.sha512
