@@ -16,6 +16,7 @@ function git_archive(){
 }
 
 alias reload='. ~/.bash_aliases'
+alias edit_aliases='vim ~/.bash_aliases'
 
 function sha256file(){
 	echo Saving sha checksum to $1.sha256
@@ -36,6 +37,7 @@ function network_priority(){
 }
 alias network_scan="sudo arp-scan -l --interface=enp0s25"
 alias network_hogs='sudo netstat --inet -ap'
+alias speedtest='curl http://ftp.task.gda.pl/ls-lR -o /dev/null'
 
 alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
@@ -49,6 +51,9 @@ alias gc='git commit -S'
 alias gcma='git commit -S -asm'
 alias gcam='git commit -S -asm'
 alias gs='git status'
+alias gss='git stash save'
+alias gsp='git stash pop'
+alias gms='git merge -S --no-ff'
 alias gff='git diff -w HEAD^'
 alias gf='git diff -w'
 alias gfw='git diff -w --word-diff-regex=[^[:space:]]'
