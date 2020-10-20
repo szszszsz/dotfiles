@@ -18,9 +18,12 @@ alias ll='ls -lh'
 alias vim='nvim'
 alias scan_network="sudo arp-scan -l --interface=enp0s25"
 alias pastebinit='pastebinit -b http://dpaste.com/'
+alias mv='mv -v'
+alias reload='source ~/.config/fish/config.fish'
 
 
-set -gx PATH ~/work/software/gcc-arm/gcc-arm-none-eabi-8-2018-q4-major/bin/ $PATH
+# set -gx PATH ~/work/software/gcc-arm/gcc-arm-none-eabi-8-2018-q4-major/bin/ $PATH
+set -gx PATH /home/sz/work/software/gcc-arm-current-bin/ $PATH
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH ~/.cargo/bin $PATH
 set -gx PATH /usr/local/cuda/bin $PATH
